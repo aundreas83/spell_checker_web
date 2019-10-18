@@ -12,8 +12,9 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.uname.data).first()
-        if user is None or not user.check_password(form.pword.data):
-            flash('Invalid username or password')
+        user_2fa = User.query.filter_by(twofactorauth=form.twofactorauth.data).first()
+        if user is None or user_2fa is None or not user.check_password(form.pword.data):
+            flash('Invalid username, 2FA or password')
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
         next_page = request.args.get('next')

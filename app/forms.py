@@ -6,12 +6,13 @@ from app.models import User
 class LoginForm(FlaskForm):
     uname = StringField('Username', validators=[DataRequired()])
     pword = PasswordField('Password', validators=[DataRequired()])
+    twofactorauth = StringField('2FA', id='2fa', validators=[DataRequired()])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
 
 class RegistrationForm(FlaskForm):
     uname = StringField('Username', validators=[DataRequired()])
-    twofactorauth = StringField('2FA', validators=[DataRequired()])
+    twofactorauth = StringField('2FA', id='2fa', validators=[DataRequired()])
     pword = PasswordField('Password', validators=[DataRequired()])
     password2 = PasswordField(
         'Repeat Password', validators=[DataRequired(), EqualTo('pword')])

@@ -12,12 +12,19 @@
             {% endfor %}
         </p>
         <p>
-            {{ form.pword.label(id='pword') }}<br>
+            {{ form.pword.label}}<br>
             {{ form.pword(size=32) }}<br>
             {% for error in form.pword.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
+	<p>
+            {{ form.twofactorauth.label}}<br>
+            {{ form.twofactorauth(size=32) }}<br>
+            {% for error in form.twofactorauth.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+	</p>
         <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
         <p>{{ form.submit() }}</p>
 	<p>New User? <a href="{{ url_for('register') }}">Click to Register!</a></p>
