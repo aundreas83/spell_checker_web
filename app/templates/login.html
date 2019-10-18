@@ -5,16 +5,16 @@
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         <p>
-            {{ form.username.label(id='uname') }}<br>
-            {{ form.username(size=32) }}<br>
-            {% for error in form.username.errors %}
+            {{ form.uname.label}}<br>
+            {{ form.uname(size=32) }}<br>
+            {% for error in form.uname.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
         <p>
-            {{ form.password.label(id='pword') }}<br>
-            {{ form.password(size=32) }}<br>
-            {% for error in form.password.errors %}
+            {{ form.pword.label(id='pword') }}<br>
+            {{ form.pword(size=32) }}<br>
+            {% for error in form.pword.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>

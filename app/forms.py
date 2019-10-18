@@ -4,20 +4,20 @@ from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from app.models import User
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
+    uname = StringField('Username', validators=[DataRequired()])
+    pword = PasswordField('Password', validators=[DataRequired()])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
 
 class RegistrationForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
+    uname = StringField('Username', validators=[DataRequired()])
     twofactorauth = StringField('2FA', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
+    pword = PasswordField('Password', validators=[DataRequired()])
     password2 = PasswordField(
-        'Repeat Password', validators=[DataRequired(), EqualTo('password')])
+        'Repeat Password', validators=[DataRequired(), EqualTo('pword')])
     submit = SubmitField('Register')
 
-    def validate_username(self, username):
-        user = User.query.filter_by(username=username.data).first()
+    def validate_username(self, uname):
+        user = User.query.filter_by(uname=username.data).first()
         if user is not None:
             raise ValidationError('Please use a different username.')
