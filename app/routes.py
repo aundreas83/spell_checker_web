@@ -11,8 +11,8 @@ def login():
         return redirect(url_for('index'))
     form = LoginForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(uname=form.uname.data).first()
-        if user is None or not user.check_password(form.pword.data):
+        user = User.query.filter_by(username=form.username.data).first()
+        if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
@@ -42,7 +42,7 @@ def index():
             'body': 'The Avengers movie was so cool!'
         }
     ]
-    return render_template("index.html", title='Home Page', posts=posts)
+    return render_template("index.html", title='Home Page')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -50,10 +50,10 @@ def register():
         return redirect(url_for('index'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(uname=form.uname.data, twofa=form.twofa.data)
-        user.set_password(form.pword.data)
+        user = User(username=form.username.data, twofactorauth=form.twofactorauth.data)
+        user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('success')
+        flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)

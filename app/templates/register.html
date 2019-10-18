@@ -5,30 +5,30 @@
     <form action="" method="post">
         {{ form.hidden_tag() }}
         <p>
-            {{ form.uname.label }}<br>
-            {{ form.uname(size=32) }}<br>
-            {% for error in form.uname.errors %}
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
         <p>
-            {{ form.twofa.label }}<br>
-            {{ form.twofa(size=64) }}<br>
-            {% for error in form.twofa.errors %}
+            {{ form.twofactorauth.label }}<br>
+            {{ form.twofactorauth(size=64) }}<br>
+            {% for error in form.twofactorauth.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
         <p>
-            {{ form.pword.label }}<br>
-            {{ form.pword(size=32) }}<br>
-            {% for error in form.pword.errors %}
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br>
+            {% for error in form.password.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
         <p>
-            {{ form.pword2.label }}<br>
-            {{ form.pword2(size=32) }}<br>
-            {% for error in form.pword2.errors %}
+            {{ form.password2.label }}<br>
+            {{ form.password2(size=32) }}<br>
+            {% for error in form.password2.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
