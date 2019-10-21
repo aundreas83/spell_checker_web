@@ -12,7 +12,7 @@
             {% endfor %}
         </p>
         <p>
-            {{ form.twofactorauth.label(id='2fa') }}<br>
+            {{ form.twofactorauth.label(id='2fa')}}<br>
             {{ form.twofactorauth(size=64) }}<br>
             {% for error in form.twofactorauth.errors %}
             <span style="color: red;">[{{ error }}]</span>
@@ -26,6 +26,5 @@
             {% endfor %}
         </p>
         <p>{{ form.submit() }}</p>
-        <p id="success">success</p>
     </form>
 {% endblock %}
