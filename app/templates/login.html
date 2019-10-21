@@ -11,7 +11,7 @@
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
-        <p'>
+        <p>
             {{ form.pword.label}}<br>
             {{ form.pword(size=32) }}<br>
             {% for error in form.pword.errors %}

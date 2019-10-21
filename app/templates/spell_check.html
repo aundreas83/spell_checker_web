@@ -7,12 +7,13 @@
         {{ form.hidden_tag() }}
         <p>
             {{ form.spellchecker.label}}<br>
-            {{ form.spellchecker(size=128) }}<br>
+            {{ form.spellchecker(id = "inputtext") }}<br>
             {% for error in form.spellchecker.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
-        </form>
+        <p>{{ form.submit() }}</p>
+    </form>
     </body>
 {% endblock %}
 

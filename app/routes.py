@@ -1,6 +1,6 @@
 from flask import render_template, Flask, redirect, url_for, flash, request, Markup
 from app import app, db
-from app.forms import LoginForm, RegistrationForm
+from app.forms import LoginForm, RegistrationForm, Spell_Checker
 from flask_login import current_user, login_user, login_required, logout_user
 from app.models import User
 from werkzeug.urls import url_parse
@@ -31,6 +31,8 @@ def spell_checker():
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
     form = Spell_Checker()
+    if form.validate_on_submit():
+        Flash('success')
     return render_template('spell_check.html', title="Spell Checker", form=form)
 
 @app.route('/logout')

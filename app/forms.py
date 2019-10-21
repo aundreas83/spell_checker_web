@@ -23,4 +23,5 @@ class RegistrationForm(FlaskForm):
 
 class Spell_Checker(FlaskForm):
     spellchecker = StringField('Check words', validators=[DataRequired()])
+    submit = SubmitField('Submit')
 
