@@ -14,11 +14,12 @@ def login():
         user = User.query.filter_by(username=form.uname.data).first()
         user_2fa = User.query.filter_by(twofactorauth=form.twofactorauth.data).first()
         if user is None or not user.check_password(form.pword.data):
-            flash(Markup('Invalid username or password<li><id="result"></li>'))
+            flash(Markup('<li id="result">Invalid username or password</li>'))
             if user_2fa is None:
-                flash(Markup('Two-factor failure<li><id="result"></li>'))
+                flash(Markup('<li id="result">Two-factor failure</li>'))
                 return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
+        flash(Markup('Logged in successfully. <li id="result"> success </li>'))
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('index')
@@ -57,5 +58,5 @@ def register():
         user.set_password(form.pword.data)
         db.session.add(user)
         db.session.commit()
-        flash(Markup('success<li><id="result"></li>'))
+        flash(Markup('<li id="result">success</li>'))
     return render_template('register.html', title='Register', form=form)
