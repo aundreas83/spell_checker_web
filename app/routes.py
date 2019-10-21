@@ -1,4 +1,4 @@
-from flask import render_template, Flask, redirect, url_for, flash, request
+from flask import render_template, Flask, redirect, url_for, flash, request, Markup
 from app import app, db
 from app.forms import LoginForm, RegistrationForm
 from flask_login import current_user, login_user, login_required, logout_user
@@ -14,9 +14,9 @@ def login():
         user = User.query.filter_by(username=form.uname.data).first()
         user_2fa = User.query.filter_by(twofactorauth=form.twofactorauth.data).first()
         if user is None or not user.check_password(form.pword.data):
-            flash('Invalid username or password')
+            flash(Markup('Invalid username or password<id="result">'))
             if user_2fa is None:
-                flash('Two-factor failure')
+                flash(Markup('Two-factor failure<id="result">'))
                 return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
         next_page = request.args.get('next')
@@ -57,5 +57,5 @@ def register():
         user.set_password(form.pword.data)
         db.session.add(user)
         db.session.commit()
-        flash('success', 'success')
+        flash(Markup('success<id="result">'))
     return render_template('register.html', title='Register', form=form)

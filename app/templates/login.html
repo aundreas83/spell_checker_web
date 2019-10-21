@@ -4,21 +4,21 @@
     <h1>Sign In</h1>
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
-        <p id='result'>
+        <p>
             {{ form.uname.label}}<br>
             {{ form.uname(size=32) }}<br>
             {% for error in form.uname.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
-        <p id='result'>
+        <p'>
             {{ form.pword.label}}<br>
             {{ form.pword(size=32) }}<br>
             {% for error in form.pword.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
-	<p id='result'>
+	<p>
             {{ form.twofactorauth.label}}<br>
             {{ form.twofactorauth(size=32) }}<br>
             {% for error in form.twofactorauth.errors %}
