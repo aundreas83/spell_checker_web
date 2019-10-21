@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Welcome to Spell Checker</h1>
+    <body>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.spellchecker.label}}<br>
+            {{ form.spellchecker(size=128) }}<br>
+            {% for error in form.spellchecker.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        </form>
+    </body>
+{% endblock %}
+
