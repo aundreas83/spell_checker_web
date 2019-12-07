@@ -1,0 +1,10 @@
+action: py37, msg: getenv
+cwd: /home/appsec/NYUAPPSEC/spell_checker_web/.tox
+cmd: /home/appsec/NYUAPPSEC/spell_checker_web/venv/bin/python3 -m virtualenv --no-download --python /usr/bin/python3.7 py37
+Already using interpreter /usr/bin/python3.7
+Using base prefix '/usr'
+New python executable in /home/appsec/NYUAPPSEC/spell_checker_web/.tox/py37/bin/python3.7
+Also creating executable in /home/appsec/NYUAPPSEC/spell_checker_web/.tox/py37/bin/python
+Installing setuptools, pip, wheel...
+done.
+Running virtualenv with interpreter /usr/bin/python3.7

@@ -1,0 +1,63 @@
+action: py36, msg: getenv
+cwd: /home/appsec/NYUAPPSEC/spell_checker_web
+cmd: /home/appsec/NYUAPPSEC/spell_checker_web/.tox/py36/bin/python -m pip install -rrequirements.txt
+Processing /home/appsec/.cache/pip/wheels/c6/b8/fd/1f16371156a8184172c4935cbbef6a345d57dd447e31a36633/alembic-1.2.1-py2.py3-none-any.whl
+Collecting Click==7.0
+  Using cached https://files.pythonhosted.org/packages/fa/37/45185cb5abbc30d7257104c434fe0b07e5a195a6847506c074527aa599ec/Click-7.0-py2.py3-none-any.whl
+Collecting filelock==3.0.12
+  Using cached https://files.pythonhosted.org/packages/93/83/71a2ee6158bb9f39a90c0dea1637f81d5eef866e188e1971a1b1ab01a35a/filelock-3.0.12-py3-none-any.whl
+Collecting Flask==1.1.1
+  Using cached https://files.pythonhosted.org/packages/9b/93/628509b8d5dc749656a9641f4caf13540e2cdec85276964ff8f43bbb1d3b/Flask-1.1.1-py2.py3-none-any.whl
+Processing /home/appsec/.cache/pip/wheels/39/10/74/d68194e28d5f7a83de5f66e5b2deff5ccbb424fe45e6b0e927/Flask_Login-0.4.1-py2.py3-none-any.whl
+Collecting Flask-Migrate==2.5.2
+  Using cached https://files.pythonhosted.org/packages/4b/22/d20a105f13c58fe590ef38ac59d5cabc1a917549ea8f90b0ca7b4e84f6be/Flask_Migrate-2.5.2-py2.py3-none-any.whl
+Collecting Flask-SQLAlchemy==2.4.1
+  Using cached https://files.pythonhosted.org/packages/1e/65/226d95466c75e34e291a76890ed0e27af2e46ab913002847856f11d4d59d/Flask_SQLAlchemy-2.4.1-py2.py3-none-any.whl
+Collecting Flask-WTF==0.14.2
+  Using cached https://files.pythonhosted.org/packages/60/3a/58c629472d10539ae5167dc7c1fecfa95dd7d0b7864623931e3776438a24/Flask_WTF-0.14.2-py2.py3-none-any.whl
+Collecting importlib-metadata==0.23
+  Using cached https://files.pythonhosted.org/packages/f6/d2/40b3fa882147719744e6aa50ac39cf7a22a913cbcba86a0371176c425a3b/importlib_metadata-0.23-py2.py3-none-any.whl
+Collecting itsdangerous==1.1.0
+  Using cached https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+Collecting Jinja2==2.10.3
+  Using cached https://files.pythonhosted.org/packages/65/e0/eb35e762802015cab1ccee04e8a277b03f1d8e53da3ec3106882ec42558b/Jinja2-2.10.3-py2.py3-none-any.whl
+Processing /home/appsec/.cache/pip/wheels/98/32/7b/a291926643fc1d1e02593e0d9e247c5a866a366b8343b7aa27/Mako-1.1.0-cp36-none-any.whl
+Collecting MarkupSafe==1.1.1
+  Using cached https://files.pythonhosted.org/packages/b2/5f/23e0023be6bb885d00ffbefad2942bc51a620328ee910f64abe5a8d18dd1/MarkupSafe-1.1.1-cp36-cp36m-manylinux1_x86_64.whl
+Collecting more-itertools==7.2.0
+  Using cached https://files.pythonhosted.org/packages/45/dc/3241eef99eb45f1def35cf93af35d1cf9ef4c0991792583b8f33ea41b092/more_itertools-7.2.0-py3-none-any.whl
+Collecting packaging==19.2
+  Using cached https://files.pythonhosted.org/packages/cf/94/9672c2d4b126e74c4496c6b3c58a8b51d6419267be9e70660ba23374c875/packaging-19.2-py2.py3-none-any.whl
+Collecting pluggy==0.13.0
+  Using cached https://files.pythonhosted.org/packages/92/c7/48439f7d5fd6bddb4c04b850bb862b42e3e2b98570040dfaf68aedd8114b/pluggy-0.13.0-py2.py3-none-any.whl
+Collecting py==1.8.0
+  Using cached https://files.pythonhosted.org/packages/76/bc/394ad449851729244a97857ee14d7cba61ddb268dce3db538ba2f2ba1f0f/py-1.8.0-py2.py3-none-any.whl
+Collecting pyparsing==2.4.2
+  Using cached https://files.pythonhosted.org/packages/11/fa/0160cd525c62d7abd076a070ff02b2b94de589f1a9789774f17d7c54058e/pyparsing-2.4.2-py2.py3-none-any.whl
+Collecting python-dateutil==2.8.0
+  Using cached https://files.pythonhosted.org/packages/41/17/c62faccbfbd163c7f57f3844689e3a78bae1f403648a6afb1d0866d87fbb/python_dateutil-2.8.0-py2.py3-none-any.whl
+Collecting python-dotenv==0.10.3
+  Using cached https://files.pythonhosted.org/packages/57/c8/5b14d5cffe7bb06bedf9d66c4562bf90330d3d35e7f0266928c370d9dd6d/python_dotenv-0.10.3-py2.py3-none-any.whl
+Collecting python-editor==1.0.4
+  Using cached https://files.pythonhosted.org/packages/c6/d3/201fc3abe391bbae6606e6f1d598c15d367033332bd54352b12f35513717/python_editor-1.0.4-py3-none-any.whl
+Collecting six==1.12.0
+  Using cached https://files.pythonhosted.org/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl
+Processing /home/appsec/.cache/pip/wheels/4b/b2/89/cd2231ee623987c605f049df55f40a3e4252ef6a15b94836c2/SQLAlchemy-1.3.10-cp36-cp36m-linux_x86_64.whl
+Collecting toml==0.10.0
+  Using cached https://files.pythonhosted.org/packages/a2/12/ced7105d2de62fa7c8fb5fce92cc4ce66b57c95fb875e9318dba7f8c5db0/toml-0.10.0-py2.py3-none-any.whl
+Collecting tox==3.14.0
+  Using cached https://files.pythonhosted.org/packages/a7/0c/ed234b83d2c4fcef1cfccf97371183d51dafae62e64334de34d0a6333114/tox-3.14.0-py2.py3-none-any.whl
+Collecting tox-travis==0.12
+  Using cached https://files.pythonhosted.org/packages/b9/62/940f7fdb0d207a90ebf8389b59679ed4c3b4b36357054a30dda6274ee6d0/tox_travis-0.12-py2.py3-none-any.whl
+Collecting virtualenv==16.7.6
+  Using cached https://files.pythonhosted.org/packages/89/66/786e0d6f61bd0612f431e19b016d1ae46f1cb8d21a80352cc6774ec876e3/virtualenv-16.7.6-py2.py3-none-any.whl
+Collecting Werkzeug==0.16.0
+  Using cached https://files.pythonhosted.org/packages/ce/42/3aeda98f96e85fd26180534d36570e4d18108d62ae36f87694b476b83d6f/Werkzeug-0.16.0-py2.py3-none-any.whl
+Collecting WTForms==2.2.1
+  Using cached https://files.pythonhosted.org/packages/9f/c8/dac5dce9908df1d9d48ec0e26e2a250839fa36ea2c602cc4f85ccfeb5c65/WTForms-2.2.1-py2.py3-none-any.whl
+Collecting zipp==0.6.0
+  Using cached https://files.pythonhosted.org/packages/74/3d/1ee25a26411ba0401b43c6376d2316a71addcc72ef8690b101b4ea56d76a/zipp-0.6.0-py2.py3-none-any.whl
+Installing collected packages: SQLAlchemy, MarkupSafe, Mako, python-editor, six, python-dateutil, alembic, Click, filelock, Jinja2, itsdangerous, Werkzeug, Flask, Flask-Login, Flask-SQLAlchemy, Flask-Migrate, WTForms, Flask-WTF, more-itertools, zipp, importlib-metadata, pyparsing, packaging, pluggy, py, python-dotenv, toml, virtualenv, tox, tox-travis
+Successfully installed Click-7.0 Flask-1.1.1 Flask-Login-0.4.1 Flask-Migrate-2.5.2 Flask-SQLAlchemy-2.4.1 Flask-WTF-0.14.2 Jinja2-2.10.3 Mako-1.1.0 MarkupSafe-1.1.1 SQLAlchemy-1.3.10 WTForms-2.2.1 Werkzeug-0.16.0 alembic-1.2.1 filelock-3.0.12 importlib-metadata-0.23 itsdangerous-1.1.0 more-itertools-7.2.0 packaging-19.2 pluggy-0.13.0 py-1.8.0 pyparsing-2.4.2 python-dateutil-2.8.0 python-dotenv-0.10.3 python-editor-1.0.4 six-1.12.0 toml-0.10.0 tox-3.14.0 tox-travis-0.12 virtualenv-16.7.6 zipp-0.6.0
+WARNING: You are using pip version 19.3; however, version 19.3.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.

@@ -1,0 +1,9 @@
+action: py36, msg: getenv
+cwd: /home/appsec/NYUAPPSEC/spell_checker_web/.tox
+cmd: /home/appsec/NYUAPPSEC/spell_checker_web/venv/bin/python3 -m virtualenv --no-download --python /home/appsec/NYUAPPSEC/spell_checker_web/venv/bin/python3 py36
+Already using interpreter /home/appsec/NYUAPPSEC/spell_checker_web/venv/bin/python3
+Using base prefix '/usr'
+New python executable in /home/appsec/NYUAPPSEC/spell_checker_web/.tox/py36/bin/python3
+Also creating executable in /home/appsec/NYUAPPSEC/spell_checker_web/.tox/py36/bin/python
+Installing setuptools, pip, wheel...
+done.
