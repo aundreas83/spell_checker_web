@@ -25,25 +25,24 @@ def login():
         user = User.query.filter_by(username=form.username.data).first()
         user_2fa = User.query.filter_by(twofactorauth=form.twofactorauth.data).first()
         if user is None or not user.check_password(form.password.data) or user_2fa is None:
-            flash(Markup('<li id="result">Invalid username, password or 2FA verification</li>'))
+            flash(Markup('Invalid username, password or 2FA verification <li class="danny" id="result">failed</li>'))
             return redirect(url_for('login'))
         user.authenticated = True
         login_user(user, remember=form.remember_me.data)
-        flash("success", "result")
+        flash(Markup('Logged in successfully. <li class="danny" id="result"> success </li>'))
 
         log_login = UserHistory(action="login", user=current_user)
         db.session.add(log_login)
         db.session.commit()
         return redirect(url_for('spell_checker'))
-    return render_template('login.html', title='Sign In',  user_search=str(current_user), form=form)
+    return render_template('login.html', title='Sign In', user_search=str(current_user), form=form)
 
 @app.route('/spell_check', methods=['GET', 'POST'])
-@login_required
 def spell_checker():
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
     form = Spell_Checker()
-    if flask.request.method == "POST":
+    if request.method == "POST":
         if form.validate_on_submit():
             f = open("check.txt", "w")
             f.write(form.spellchecker.data)
@@ -89,7 +88,6 @@ def logout():
 
 @app.route('/')
 @app.route('/index')
-@login_required
 def index():
     return render_template("index.html", title='Home Page', user_search=str(current_user), )
 
@@ -104,7 +102,7 @@ def register():
         user.authenticated = True
         db.session.add(user)
         db.session.commit()
-        flash(Markup('Registered successfully. <li id="result"> success </li>'))
+        flash(Markup('Registered successfully. <li id="success"> success </li>'))
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', user_search=str(current_user), form=form)
 
