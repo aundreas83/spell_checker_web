@@ -38,12 +38,11 @@ def login():
     return render_template('login.html', title='Sign In', user_search=str(current_user), form=form)
 
 @app.route('/spell_check', methods=['GET', 'POST'])
-@login_required
 def spell_checker():
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
     form = Spell_Checker()
-    if flask.request.method == "POST":
+    if request.method == "POST":
         if form.validate_on_submit():
             f = open("check.txt", "w")
             f.write(form.spellchecker.data)
