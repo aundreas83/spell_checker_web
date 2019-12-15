@@ -25,11 +25,11 @@ def login():
         user = User.query.filter_by(username=form.username.data).first()
         user_2fa = User.query.filter_by(twofactorauth=form.twofactorauth.data).first()
         if user is None or not user.check_password(form.password.data) or user_2fa is None:
-            flash('Invalid username, password or 2FA verification', "result")
+            flash(Markup('Invalid username, password or 2FA verification', id="result"))
             return redirect(url_for('login'))
         user.authenticated = True
         login_user(user, remember=form.remember_me.data)
-        flash("success", "result")
+        flash("success", id="result")
 
         log_login = UserHistory(action="login", user=current_user)
         db.session.add(log_login)
