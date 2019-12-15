@@ -1,1 +1,1 @@
-test <script>alert(document.cookie)</script>
+test

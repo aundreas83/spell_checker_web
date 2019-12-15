@@ -1,5 +1,5 @@
 from app import app, db
-from app.models import User
+from app.models import User, SpellCheckHistory, UserHistory
 
 @app.shell_context_processor
 def make_shell_context():

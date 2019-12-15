@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import ValidationError, DataRequired, Email, Length, optional 
+from wtforms.validators import ValidationError, DataRequired, Email, Length, optional
 from app.models import User
 
 class LoginForm(FlaskForm):
@@ -25,3 +25,6 @@ class Spell_Checker(FlaskForm):
     spellchecker = StringField('Check words', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
+class SearchUsersForm(FlaskForm):
+    username = StringField("Username", id="userquery", validators=[DataRequired()])
+    submit = SubmitField("Search")

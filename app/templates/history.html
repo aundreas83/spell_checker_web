@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<p> Total number of queries ran by {{ user_search.username }}:</p>
+	<p id="numqueries">{{ count }}</p>
+
+
+	{% if query_id %}
+
+		<p id="{{query_id}}">{{ query_id }}</p>
+		<p id="username"{{ user_search.username }}</p>
+		<p id="querytext">{{ query.query_spelling }}</p>
+		<p id="queryresults">{{ query.store_spell_results }}</p>
+
+	{% endif %}
+
+	{% for query in queries %}
+
+		<li><a href="/history/query{{ query.id }}" id="query{{query.id}}">Query #{{ query.id }}</a></li>
+
+	{% endfor %}
+
+	{% if user_search.username == "admin" %}
+	<form action="" method="post" novalidate>
+		{{ form.hidden_tag() }}
+
+		<p>
+			{{ form.username.label }}<br>
+			{{ form.username(size=32) }}
+		</p>
+
+		<p>
+			{{ form.submit() }}
+		</p>
+
+	</form>
+
+	{% endif %}
+{% endblock %}

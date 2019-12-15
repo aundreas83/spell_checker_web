@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% if user_search.username == "admin" %}
+		<form action="" method="post" novalidate>
+			{{ form.hidden_tag() }}
+
+			<p>
+				{{ form.username.label }}<br>
+				{{ form.username(size=32) }}
+			</p>
+			<p>
+				{{ form.submit() }}
+			</p>
+		</form>
+
+		{% for query in queries %}
+			<p id="{{ 'logout' if query.action == 'logout' else 'login'}}_{{query.id}}">
+				{{ query.action }} time: {{ query.action_time}}
+			</p>
+		{% endfor %}
+
+	{% endif %}
+{% endblock %}
