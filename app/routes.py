@@ -104,7 +104,7 @@ def register():
         user.authenticated = True
         db.session.add(user)
         db.session.commit()
-        flash(Markup('Registered successfully. <li id="result"> success </li>'))
+        flash(Markup('Registered successfully. <li id="success"> success </li>'))
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', user_search=str(current_user), form=form)
 
