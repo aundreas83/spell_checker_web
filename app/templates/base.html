@@ -19,7 +19,8 @@
                 <a href="{{ url_for('spell_checker') }}">Spell Checker</a>
                 <a href="{{ url_for('history') }}">History</a>
                 {% endif %}
-                {% if current_user == "admin" %}
+
+                {% if user_search.username == "admin" %}
                 <a href="{{ url_for('login_history') }}">Login History</a>
                 {% endif %}
 

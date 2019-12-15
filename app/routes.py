@@ -35,7 +35,7 @@ def login():
         db.session.add(log_login)
         db.session.commit()
         return redirect(url_for('spell_checker'))
-    return render_template('login.html', title='Sign In', form=form)
+    return render_template('login.html', title='Sign In',  user_search=str(current_user), form=form)
 
 @app.route('/spell_check', methods=['GET', 'POST'])
 @login_required
@@ -69,13 +69,13 @@ def spell_checker():
             db.session.add(save_SpellCheckHistory)
             db.session.commit()
 
-        return render_template("spell_check.html", title="Spell Checker", form=form)
+        return render_template("spell_check.html", title="Spell Checker", user_search=str(current_user), form=form)
     if request.method == "GET":
         saved_SpellCheckHistory = SpellCheckHistory.query.filter_by(user_id=current_user.id).first()
         retrieved_data = getattr(saved_SpellCheckHistory, "query_spelling", None)
 
         login_success = request.args.get("login_success")
-        return render_template("spell_check.html", title="Spell Check", form=form, input_data=retrieved_data, login_success=True,)
+        return render_template("spell_check.html", title="Spell Check", user_search=str(current_user), form=form, input_data=retrieved_data, login_success=True,)
 
 @app.route('/logout')
 @login_required
@@ -91,7 +91,7 @@ def logout():
 @app.route('/index')
 @login_required
 def index():
-    return render_template("index.html", title='Home Page')
+    return render_template("index.html", title='Home Page', user_search=str(current_user), )
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -106,7 +106,7 @@ def register():
         db.session.commit()
         flash(Markup('Registered successfully. <li id="result"> success </li>'))
         return redirect(url_for('login'))
-    return render_template('register.html', title='Register', form=form)
+    return render_template('register.html', title='Register', user_search=str(current_user), form=form)
 
 
 @app.route("/history", methods=["GET", "POST"])
@@ -155,7 +155,7 @@ def history(query_id=None):
 @app.route("/login_history", methods=["GET", "POST"])
 @login_required
 def login_history():
-    if not str(current_user) != "admin":
+    if str(current_user) != "admin":
         abort(403)
 
     form = SearchUsersForm()
