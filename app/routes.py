@@ -89,7 +89,6 @@ def logout():
 
 @app.route('/')
 @app.route('/index')
-@login_required
 def index():
     return render_template("index.html", title='Home Page', user_search=str(current_user), )
 
